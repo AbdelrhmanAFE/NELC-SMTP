@@ -1,0 +1,18 @@
+steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    id: 'Update Laravel VMs'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        bash ./laravel.sh
+  - name: 'gcr.io/cloud-builders/gcloud'
+    id: 'Update Drupal VMs'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        bash ./drupal.sh
+
+options:
+  logging: CLOUD_LOGGING_ONLY
