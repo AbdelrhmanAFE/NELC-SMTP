@@ -14,7 +14,8 @@ echo "🔐 Fetching Exchange password once..."
           echo "🔧 Updating Laravel on $vm ($zone)... ENV file: $env_file"
 
           ESCAPED_SECRET=$(printf "%s" "$SECRET" | sed 's/"/\\"/g')
-
+echo $env_file
+echo $ESCAPED_SECRET
 gcloud compute ssh "$vm" \
   --zone="$zone" \
   --tunnel-through-iap \
